@@ -7,6 +7,7 @@ const compression = require("compression");
 const PORT = process.env.PORT || 3000;
 
 
+
 const app = express();
 
 app.use(logger("dev"));
@@ -17,17 +18,19 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-// mongodb://<dbuser>:<dbpassword>@ds035816.mlab.com:35816/heroku_qkl7nwz7
+// mongoose.connect("mongodb://localhost/budget", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true
+// }); 
+// mongodb://<dbuser>:<dbpassword>@ds219308.mlab.com:19308/heroku_9738h7dp
 
-mongoose.connect("mongodb://user1:tracker1@ds035816.mlab.com:35816/heroku_qkl7nwz7", {
+mongoose.connect("mongodb://username:password1@ds219308.mlab.com:19308/heroku_9738h7dp", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
-// mongoose.connect("mongodb://user1:tracker1@ds263928.mlab.com:63928/heroku_qlj7pl2x", {
-//   useNewUrlParser: true,
-//   useFindAndModify: false
-// });
 
 // routes
 app.use(require("./routes/api.js"));
