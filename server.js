@@ -15,10 +15,17 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://user1:tracker1@ds263928.mlab.com:63928/heroku_qlj7pl2x", {
+// mongodb://<dbuser>:<dbpassword>@ds035816.mlab.com:35816/heroku_qkl7nwz7
+
+mongoose.connect("mongodb://user1:tracker1@ds035816.mlab.com:35816/heroku_qkl7nwz7", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
+
+// mongoose.connect("mongodb://user1:tracker1@ds263928.mlab.com:63928/heroku_qlj7pl2x", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
 
 // routes
 app.use(require("./routes/api.js"));
