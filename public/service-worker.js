@@ -1,12 +1,18 @@
-const FilesToCache = [
+// var CACHE_NAME = 'my-site-cache-v1';
+
+var FILES_TO_CACHE = [
   '/',
   '/styles.css',
   '/index.js',
-  '/manifest.json',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
+  '/manifest.json',
   '/db.js',
   './favicon.ico'
+  
+  // '/models/transaction.js',
+  // '/../models/transaction.js'
+
 ];
 
 const CACHE_NAME = "static-cache-v2";
@@ -17,7 +23,7 @@ self.addEventListener("install", function(evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       console.log("Your files were pre-cached successfully!");
-      return cache.addAll(FilesToCache);
+      return cache.addAll(FILES_TO_CACHE);
     })
   );
 
