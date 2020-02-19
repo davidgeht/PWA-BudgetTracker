@@ -23,9 +23,9 @@ app.use(express.static("public"));
 //   useFindAndModify: false,
 //   useUnifiedTopology: true
 // }); 
-// mongodb://<dbuser>:<dbpassword>@ds219308.mlab.com:19308/heroku_9738h7dp
+// 
 
-mongoose.connect("mongodb://username:password1@ds219308.mlab.com:19308/heroku_9738h7dp", {
+mongoose.connect("mongodb://user1:tracker1@ds151431.mlab.com:51431/heroku_2115g4h3", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
